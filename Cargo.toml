@@ -1,0 +1,15 @@
+[package]
+name = "alpha-omega"
+version = "0.1.0"
+edition = "2021"
+license = "AGPL-3.0-or-later"
+description = "ALPHA-Ω Sovereign Semantic Closed-Loop Feedback Engine (core)"
+authors = ["ALPHA-Ω Project"]
+
+[[bin]]
+name = "alpha-sim"
+path = "src/main.rs"
+
+[lib]
+name = "alpha_omega"
+path = "src/lib.rs"
