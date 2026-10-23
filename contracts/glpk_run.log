@@ -1,0 +1,21 @@
+# ALPHA-Ω AMPL contract — solver run log (2026-10-23)
+# Solver: GLPSOL--GLPK LP/MIP Solver 5.0 (glpk-utils .deb)
+# Model: contracts/alpha_feedback_gmpl.mod (GMPL translation of
+#   contracts/alpha_feedback.mod; abs() linearized, see that file)
+# Data:  contracts/alpha_feedback.dat (canonical seed-42 trace)
+#
+# Result: INTEGER OPTIMAL SOLUTION FOUND, objective 0.4335529048
+#   for the all-NoOp assignment. The objective is pure cost (the
+#   w_e term does not involve a[t]), so the optimum acting zero
+#   times is the expected reading: this contract GATES actions,
+#   it does not select them.
+# Independent check: the engine's own assignment (feedback at
+#   cycles 0, 17, 34) violates NONE of QualityGate, FreshnessGate,
+#   PowerEligibility, FrequencyBound — the engine trace is
+#   FEASIBLE for the contract. Engine assignment cost 6.433553
+#   = 0.433553 base + 3 x w_a + 6 switches x w_s.
+
+GLPK Integer Optimizer 5.0
+OPTIMAL LP SOLUTION FOUND
+Integer optimization begins...
+INTEGER OPTIMAL SOLUTION FOUND
