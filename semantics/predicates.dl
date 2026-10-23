@@ -1,0 +1,36 @@
+% ALPHA-Ω semantic predicates
+% Copyright (C) 2025–2026 ALPHA-Ω contributors
+% SPDX-License-Identifier: AGPL-3.0-or-later
+%
+% Implemented in Rust encode_semantics; this file is the declarative contract.
+
+% A Datalog engine is not required for the executable core.
+
+% Base facts from observation + state
+.decl ObservationValid(cycle: number)
+.decl AlphaBandDetected(cycle: number)
+.decl AlphaPowerElevated(cycle: number)
+.decl SignalQualityAcceptable(cycle: number)
+.decl TimestampFresh(cycle: number)
+.decl FeedbackEligible(cycle: number)
+.decl TransitionRejected(cycle: number)
+.decl FeedbackPermitted(cycle: number)
+
+% Rules (deterministic evaluation order)
+FeedbackEligible(c) :-
+    ObservationValid(c),
+    AlphaBandDetected(c),
+    SignalQualityAcceptable(c),
+    TimestampFresh(c).
+
+FeedbackPermitted(c) :-
+    FeedbackEligible(c),
+    AlphaPowerElevated(c).
+
+% Contradiction / rejection
+TransitionRejected(c) :-
+    FeedbackPermitted(c),
+    !ObservationValid(c).
+
+% Provenance is carried by the executable as a digest of (sample_index, ts, power).
+% Never infer emotional / psychological / medical condition from alpha power alone.
