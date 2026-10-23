@@ -1,0 +1,10 @@
+ALPHA-Ω benchmark results — measured 2026-10-23 on the build VM
+(cargo 1.75 release build; timings are this machine's, the head
+hashes are seed-42 deterministic and machine-independent)
+
+ALPHA-Ω benchmark (seed 42, in-process, chain verified per run)
+    cycles     wall_ms  events_per_sec  head_hash
+       100        0.96          103864  447a4b918ddffedabe1ec82d75f207c437b82a20ce19b3bdf38c4e5615c48055
+      1000        7.79          128424  35c99482fe7d06523e350150b2362b79c4905179de10ab70cdff32684de6423a
+     10000       65.05          153739  acef703342484fd8c0217a6d8dfbe8be5557813f6650d9f6c8f5200286c4b5a4
+    100000      655.45          152566  09f8454cda30e8a6f38f61c5b21c945b805dc73ca49ffd9d356b810727beb678

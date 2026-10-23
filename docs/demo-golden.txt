@@ -1,0 +1,16 @@
+# ALPHA-Ω reproducible demo — golden summary.
+# Generated 2026-10-23 from the reconstructed engine
+# (alpha-sim --cycles 100 --seed 42). The counts match the
+# README example exactly; the head hash is this reconstruction's
+# (the original ledger serialization was never published).
+=== Summary ===
+processed_windows : 100
+feedback_actions  : 3
+noop_actions      : 97
+rejections        : 0
+ledger_events     : 100
+final_clock       : 100
+final_head_hash   : 447a4b918ddffedabe1ec82d75f207c437b82a20ce19b3bdf38c4e5615c48055
+dropped_samples   : 0
+
+ALPHA-Ω core simulation completed successfully.

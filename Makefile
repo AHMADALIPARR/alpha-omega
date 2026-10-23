@@ -2,13 +2,19 @@
 # Copyright (C) 2025–2026 ALPHA-Ω contributors
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-.PHONY: build test sim clean
+.PHONY: build test sim clean bench demo
 
 build:
 	cargo build --release
 
 test:
 	cargo test --release
+
+bench: build
+	./target/release/alpha-bench
+
+demo:
+	./scripts/demo.sh
 
 # Overlay FS may be noexec; copy binary to /tmp
 sim: build
